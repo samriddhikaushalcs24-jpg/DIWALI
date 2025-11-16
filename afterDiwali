@@ -1,0 +1,439 @@
+
+
+/*class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    public double add(double a, double b) {
+        return a + b;
+    }
+}
+public class Main{
+    public static void main(String[] args) {
+        Calculator calc= new Calculator();
+        System.out.println("Sum of two int:" + calc.add(5,10));
+        System.out.println("Sum of two int:" + calc.add(5,10,12));
+        System.out.println("Sum of two int:" + calc.add(5,10.903));
+
+    }
+} */
+// class bank and deposit method overloaded , method {withdrawn and current balance }
+// METHOD OVERLOADING
+/*class calculator{
+    public double discount(double price,double percent){
+        return price-(price* percent/100);
+    }
+    public double discount(double price){
+        double percent=10;
+        return price-(price*percent/100);
+    }
+    public double discount(double price,double percent,double bonus){
+        double totaloff=percent + bonus;
+        return price-(price * totaloff /100);
+    }
+}
+ public class Main{
+    public static void main(String[] args){
+        calculator dc= new calculator();
+            System.out.println(dc.discount(1000,20));
+        System.out.println(dc.discount(2000));
+        System.out.println(dc.discount(1000,20,15));
+
+
+    }
+ } */
+/* class Main{
+    void process(int a,float b){
+        System.out.println("method 1 process(int,float");
+    }
+    void process(float a,int b){
+        System.out.println("method 2 process(float,int");
+    }
+    public static void main(String[] args){
+        Main t=new Main();
+        t .process(10,10);
+    }
+} */
+//method convertor,overload: take int value ka jo binary value aata h usse string format mei print krwana h ,take float value and print in formatted string format
+   /* class Converter {
+        void convertor(int num) {
+            String binary = Integer.toBinaryString(num);
+            System.out.println("Binary value (as String): " + binary);
+        }
+
+        public static void main(String[] args) {
+            Converter c = new Converter();
+            c.convertor(56);
+        }
+    } */ //METOD OVERRIDDING
+/*class Animal{
+    void sound(){
+        System.out.println("Animal makes a sound");
+    }
+}
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog baRKS");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        Animal a= new Dog();
+        a.sound();
+    }
+        }*/
+// creqtae a base class Shapes with a method area returning zero, overide this method in circle and rectangle classes to compute and return their area values, in the main method create objects of both shapes using parent reference and display the calculated a
+
+//Exception handling is left
+//Collection
+/* import java.util.ArrayList;
+  public class Main{
+     public static void main(String[] args){
+         ArrayList<String> fruits=new ArrayList<>();
+        fruits.add("Apple");
+     fruits.add("banana");
+     fruits.add("mango");
+             //accessing the elements
+         System.out.println(fruits.get(1));
+     //changing the eklement
+         fruits.set(2,"orange");
+         //removing the element
+         fruits.remove("apple");
+         //size of arraylist
+         System.out.println("size:" + fruits.size());
+         //display all elements
+         System.out.println(fruits);
+     }
+ } */
+/*import java.util.ArrayList;
+public class Main{
+    public static void main(String[] args) {
+        ArrayList<String> animals = new ArrayList<>();
+        animals.add("fish");
+        animals.add("dog");
+        animals.add("cat");
+        System.out.println("printing all elements");
+        for (int i = 0; i < animals.size(); i++) {
+            System.out.println(animals.get(i));
+        }
+        System.out.println("printing all elemts");
+        for (String a : animals) {
+            System.out.println("a");
+        }
+
+    }} */
+/*import java.util.ArrayList;
+import java.util.Collections;
+public class Main{
+    public static void main(String[] args) {
+        ArrayList<Integer> marks = new ArrayList<>();
+        marks.add(88);
+        marks.add(89);
+        marks.add(80);
+        marks.add(44);
+        Collections.sort(marks);
+        System.out.println("ascending order:" + marks);
+        Collections.sort(marks,Collections.reverseOrder());
+
+    }} */
+/* import java.util.ArrayList;
+import java.util.Collections;
+public class Main{
+    public static void main(String[] args) {
+        ArrayList<String> List1 = new ArrayList<>();
+        ArrayList<String> List2 = new ArrayList<>();
+        List1.add("ruby");
+        List1.add("cotlin");
+        List1.add("rust");
+        List1.addAll(List2);
+        System.out.println("merged list:" + List1); */
+
+//make an arraylist and make unique combination for which the sum is 7.
+
+// Sliding question
+import java.util.Scanner;
+import java.util.ArrayList;
+/*public class Main{
+    public static void main(String[] args){
+        int[] arr={1,2,3,4,5,3};
+        int k=3;
+        int currSum=0;
+        int maxSum;
+        for(int i=0;i<k;i++) {
+            currSum += arr[i];
+        }
+        maxSum=currSum;
+        for(int right=k; right<arr.length; right++){
+            currSum += arr[right] - arr[right -k];
+            maxSum = Math.max(maxSum,currSum);
+        }
+        System.out.println("max sum: " + maxSum);
+    }
+} */
+// linkedlist
+/*
+class Node {
+    int data;
+    Node next;
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+class Linked {
+    Node head;
+    void addAtEnd(int data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        Node current = head;
+        while (current.next != null) {
+            current = current.next;
+        }
+        current.next = newNode;
+    }
+
+    void addBeginning(int data) {
+        Node newNode = new Node(data);
+        newNode.next = head;
+        head = newNode;
+    }
+
+    // Delete a node by value
+    void deleteByVal(int data) {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        // If node to be deleted is the head
+        if (head.data == data) {
+            head = head.next;
+            System.out.println("Deleted: " + data);
+            return;
+        }
+
+        Node current = head;
+        Node prev = null;
+
+        // Search for the node to be deleted
+        while (current != null && current.data != data) {
+            prev = current;
+            current = current.next;
+        }
+
+        // If data not found
+        if (current == null) {
+            System.out.println("Not found in the list: " + data);
+            return;
+        }
+
+        // Unlink the node
+        prev.next = current.next;
+        System.out.println("Deleted: " + data);
+    }
+
+    // Display the list
+    void display() {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.data + " -> ");
+            current = current.next;
+        }
+        System.out.println("null");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Linked list = new Linked();
+
+        list.addAtEnd(10);
+        list.addAtEnd(20);
+        list.addAtEnd(30);
+
+        System.out.println("Initial list:");
+        list.display();
+
+        list.addBeginning(5);
+        System.out.println("After adding at beginning:");
+        list.display();
+
+        list.deleteByVal(20);
+        System.out.println("After deletion:");
+        list.display();
+    }
+}  */
+// reverse of linkedlist
+/* class Node {
+    int data;
+    Node next;
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+class LinkedList {
+    Node head;
+
+    // Function to reverse the linked list
+    Node reverse() {
+        Node prev = null;
+        Node current = head;
+        Node next = null;
+
+        while (current != null) {
+            next = current.next;  // store next node
+            current.next = prev;  // reverse the link
+            prev = current;       // move prev ahead
+            current = next;       // move current ahead
+        }
+        head = prev; // new head
+        return head;
+    }
+
+    // Helper to print list
+    void printList() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        LinkedList list = new LinkedList();
+        list.head = new Node(1);
+        list.head.next = new Node(2);
+        list.head.next.next = new Node(3);
+        list.head.next.next.next = new Node(4);
+
+        System.out.println("Original list:");
+        list.printList();
+
+        list.reverse();
+
+        System.out.println("Reversed list:");
+        list.printList();
+    }
+} */
+
+//leetcode ques 141(floyd cycle detection)
+
+/*class ListNode {
+    int val;
+    ListNode next;
+
+    ListNode(int x) {
+        val = x;
+        next = null;
+    }
+}
+
+public class Main{
+    // Function to detect cycle using Floyd's Cycle Detection Algorithm
+
+    public static boolean hasCycle(ListNode head) {
+        if (head == null || head.next == null) {
+            return false;
+        }
+
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;          // move slow by 1 step
+            fast = fast.next.next;     // move fast by 2 steps
+
+            if (slow == fast) {        // they meet => cycle exists
+                return true;
+            }
+        }
+
+        return false;  // reached end => no cycle
+    }
+
+    public static void main(String[] args) {
+        // Create nodes
+        ListNode head = new ListNode(3);
+        ListNode second = new ListNode(2);
+        ListNode third = new ListNode(0);
+        ListNode fourth = new ListNode(-4);
+
+        // Connect nodes to form a list
+        head.next = second;
+        second.next = third;
+        third.next = fourth;
+
+        // Create a cycle (4 -> 2)
+        fourth.next = second;
+
+        // Test if cycle exists
+        if (hasCycle(head)) {
+            System.out.println("Cycle detected in the linked list.");
+        } else {
+            System.out.println("No cycle in the linked list.");
+        }
+    }
+} */
+
+/*import java.util.HashMap;
+public class Main{
+        public static void main(String[] args){
+            HashMap<Integer, String> map=new HashMap<>();
+            map.put(1,"Apple");
+            map.put(2,"banana");
+            map.put(3,"guava");
+            System.out.println("map:" + map);
+            System.out.println("value of key2:" + map.get(2));
+            map.remove(3);
+            System.out.println("after removing key 3:" + map);
+            System.out.println("contains key 17:" + map.containsKey(1));
+            System.out.println("contains value banana?:" + map.containsValue("banana"));
+            System.out.println("size: " + map.size());}} */
+
+//take a string input and print non repeating charaters using hashmap
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        String str = "aabbcddee";
+        HashMap<Character, Integer> map = new HashMap<>();
+        for (char ch : str.toCharArray()) {
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
+        }
+        for (char ch : str.toCharArray()) {
+            if (map.get(ch) == 1) {
+                System.out.println("First non-repeating: " + ch);
+                return;
+            }
+        }
+        System.out.println("No non-repeating character!");
+    }
+}
+
+
+
+
+
+
+
+
+
+
